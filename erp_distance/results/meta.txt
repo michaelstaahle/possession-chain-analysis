@@ -1,3 +1,5 @@
+Distance parameter: g = np.array([0, 0, ..., 0])
+
 Caculating rho and delta...
 average percentage of neighbours (hard coded): 5.000000
 Computing Rho with gaussian kernel of radius:     0.038000
