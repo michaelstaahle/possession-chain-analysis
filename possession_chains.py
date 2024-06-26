@@ -16,11 +16,11 @@ class possession_chains:
 
     def get_team_possession_data(self):
         possession_data = []
-        for file in os.listdir("season83/"):
+        for file in os.listdir("data/season83/"):
             if file.endswith(".json"):
-                with open(f"season83/{file}") as f:
+                with open(f"data/season83/{file}") as f:
                     game_meta = json.load(f)
-                with open(f"season83/events/{file}") as f:
+                with open(f"data/season83/events/{file}") as f:
                     game = json.load(f)
             if (
                 game_meta["matches"][0]["homeTeamId"] == self.team_id
