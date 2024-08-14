@@ -26,7 +26,7 @@ class distance_measures:
         for i in range(self.n_ball_trajectories):
             for j in range(i + 1, self.n_ball_trajectories):
                 # Append a tuple to the list that includes the outer loop index, the inner loop index, and the corresponding distance
-                data.append((i, j, pdist[counter]))
+                data.append((i + 1, j + 1, pdist[counter]))
                 counter += 1
 
         # Convert the list to a numpy array
@@ -35,12 +35,19 @@ class distance_measures:
             dtype=[("trajectory_1", int), ("trajectory_2", int), ("distance", float)],
         )
 
-        data_array["distance"] = np.around(data_array["distance"], 3)
+        data_array["distance"] = np.around(data_array["distance"], 5)
 
         return data_array
 
     def save_distance(self, data_array):
-        np.savetxt("data_array.dat", data_array, fmt="%d %d %.3f")
+        np.savetxt("data_array.dat", data_array, fmt="%d %d %.5f")
+
+    def load_distance(self, file_path="data_array.dat"):
+        data_array = np.loadtxt(
+            file_path,
+            dtype=[("trajectory_1", int), ("trajectory_2", int), ("distance", float)],
+        )
+        return data_array
 
     def distances_statistics(self, data_array):
         # Calculate the mean of the distances

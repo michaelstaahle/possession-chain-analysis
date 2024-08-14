@@ -1,0 +1,12 @@
+Caculating rho and delta...
+average percentage of neighbours (hard coded): 2.000000
+Computing Rho with gaussian kernel of radius:     0.073270
+
+Generated file:DECISION GRAPH
+column 1:Density
+column 2:Delta
+
+Cutoff: (min_rho, min_delta): (210.31, 0.28)
+NUMBER OF CLUSTERS: 1
+Performing assignation
+CLUSTER: 1 CENTER: 134 ELEMENTS: 2000 CORE: 2000 HALO: 0

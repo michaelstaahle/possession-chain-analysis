@@ -1,0 +1,19 @@
+Caculating rho and delta...
+average percentage of neighbours (hard coded): 0.200000
+Computing Rho with gaussian kernel of radius:     0.118230
+
+Generated file:DECISION GRAPH
+column 1:Density
+column 2:Delta
+
+Cutoff: (min_rho, min_delta): (20.42, 0.34)
+NUMBER OF CLUSTERS: 3
+Performing assignation
+CLUSTER: 1 CENTER: 168 ELEMENTS: 1363 CORE: 153 HALO: 1210
+CLUSTER: 2 CENTER: 194 ELEMENTS: 63 CORE: 63 HALO: 0
+CLUSTER: 3 CENTER: 1488 ELEMENTS: 1454 CORE: 82 HALO: 1372
+Generated file:CLUSTER_ASSIGNATION
+column 1:element id
+column 2:cluster assignation without halo control
+column 3:cluster assignation with halo control
+Result are saved in file CLUSTER_ASSIGNATION_20.42_0.34_.txt
