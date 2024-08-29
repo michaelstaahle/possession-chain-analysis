@@ -35,14 +35,23 @@ class possession_chains:
         for game_meta, game in self.possession_data:
             for play in game:
                 if self.team_in_possession(play):
-                    ball_trajectory = self.get_ball_trajectory(play)
-                    ball_trajectories.append(
-                        np.array(ball_trajectory, dtype=np.float64)
-                    )
-                    df = pd.DataFrame(ball_trajectory, columns=["x", "y"])
-                    df["start_eventId"] = play[0]["eventId"]
-                    df["game_id"] = game_meta["matches"][0]["matchId"]
-                    ball_trajectories_dfs.append(df)
+                    if len(play) > 2:
+                        ball_trajectory = self.get_ball_trajectory(play)
+                        ball_trajectories.append(
+                            np.array(ball_trajectory, dtype=np.float64)
+                        )
+                        df = pd.DataFrame(ball_trajectory, columns=["x", "y"])
+                        df["start_eventId"] = play[0]["eventId"]
+                        df["end_eventId"] = play[-1]["eventId"]
+                        df["game_id"] = game_meta["matches"][0]["matchId"]
+                        df["start_description"] = play[0]["description"]
+                        df["end_description"] = play[-1]["description"]
+                        df["lenght"] = len(play)
+                        df["start_eventTypeId"] = play[0]["eventTypeId"]
+                        df["end_eventTypeId"] = play[-1]["eventTypeId"]
+                        df["start_outcome"] = play[0]["outcome"]
+                        df["end_outcome"] = play[-1]["outcome"]
+                        ball_trajectories_dfs.append(df)
         return ball_trajectories, ball_trajectories_dfs
 
     def team_in_possession(self, play):
