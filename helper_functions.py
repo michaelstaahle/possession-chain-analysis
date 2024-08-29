@@ -48,7 +48,6 @@ def import_cluster_assignation(path):
         file, delimiter="\t", header=None
     )  # Adjust delimiter and header as needed
 
-    # Extract the third column (index 2) and convert to a numpy array
-    third_column_array = df.iloc[:, 2].values
+    third_column_array = df.iloc[:, 1].values
 
     return third_column_array
