@@ -41,13 +41,14 @@ def readfile(file, dimensions=2, sep=" "):
 
 def import_cluster_assignation(path):
     # Find the file starting with CLUSTER_ASSIGNATION
-    file = glob.glob(f"{path}/CLUSTER_ASSIGNATION_*")[0]
+    file = glob.glob(path)[0]
     print(file)
     # Read the file into a DataFrame
     df = pd.read_csv(
         file, delimiter="\t", header=None
     )  # Adjust delimiter and header as needed
 
-    third_column_array = df.iloc[:, 1].values
+    labels = df.iloc[:, 1].values
+    halo_labels = df.iloc[:, 2].values
 
-    return third_column_array
+    return labels, halo_labels

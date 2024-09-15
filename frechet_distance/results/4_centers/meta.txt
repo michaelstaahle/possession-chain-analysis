@@ -1,0 +1,10 @@
+Caculating rho and delta...
+average percentage of neighbours (hard coded): 0.020000
+Computing Rho with gaussian kernel of radius:     0.089540
+
+NUMBER OF CLUSTERS: 4
+Performing assignation
+CLUSTER: 1 CENTER: 187 ELEMENTS: 10 CORE: 10 HALO: 0
+CLUSTER: 2 CENTER: 1517 ELEMENTS: 1178 CORE: 81 HALO: 1097
+CLUSTER: 3 CENTER: 2132 ELEMENTS: 31 CORE: 31 HALO: 0
+CLUSTER: 4 CENTER: 2141 ELEMENTS: 1278 CORE: 61 HALO: 1217
